@@ -13,12 +13,13 @@
 		<h1>whatup this is the intro/signup page</h1>
 
 		<ul>
-			<li ng-repeat="player in players">
+			<li ng-repeat="player in players" ng-click="count = count + 1" ng-init="count = 0">
 				<button>
 					{{player.name}}
 				</button>
-				<div>
+				<div ng-hide="count % 2 === 0">
 					{{player.role}}
+					{{count}}
 				</div>
 			</li>
 		</ul>
