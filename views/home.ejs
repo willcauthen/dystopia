@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="dystopia">
 	<head>
 		<meta charset="UTF-8">
 		<title>Dystopia</title>
@@ -9,11 +9,12 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<script src="/static/js/app.js"></script>
 	</head>	
-	<body>
+	<body ng-controller="MainCtrl">
 		<h1>HELLO WORLD</h1>
-		<div ng-app="">
+		<div>
 			<p>Name: <input type="text" ng-model="name"></p>
 			<h2>Hello {{name}}</h2>
+			<h3>also this is the splash page. login or make an account, fools</h3>
 		</div>
 		
 	</body>

@@ -1,3 +1,5 @@
+
+//setting stuff up
 var mongoose = require('mongoose');
 var express = require('express');
 var app = express();
@@ -11,10 +13,14 @@ mongoose.connect(
   	process.env.MONGOHQ_URL ||
   	'mongodb://localhost/dystopia-now');
 
-
+//routes and stuff
 app.get('/', function (request, response) {
 	response.render("home");
 }); 
+
+app.get("/signup", function (request, response) {
+	response.render("signup");
+});
 
 
 app.listen(process.env.PORT || 5000, function (request, response) {
