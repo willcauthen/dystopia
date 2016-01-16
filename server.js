@@ -6,6 +6,12 @@ var bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
 app.use("/static", express.static("public"));
 
+mongoose.connect(
+	process.env.MONGOLAB_URI ||
+  	process.env.MONGOHQ_URL ||
+  	'mongodb://localhost/dystopia-now');
+
+
 app.get('/', function (request, response) {
 	response.render("home");
 }); 
