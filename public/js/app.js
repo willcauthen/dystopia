@@ -2,6 +2,17 @@ console.log("We're in good shape");
 
 var app = angular.module('dystopia', ['ui.router']);
 
+app.config(function ($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise("/");
+
+	$stateProvider
+		.state('users-index', {
+			url: "/",
+			templateUrl: "templates/users.html",
+			controller: 'UsersIndexCtrl'
+		});
+});
+
 app.controller('MainCtrl', function ($scope) {
 	$scope.name = "World";
 
