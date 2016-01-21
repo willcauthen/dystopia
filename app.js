@@ -15,7 +15,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 app.controller("MainCtrl", function ($scope) {
 	$scope.message = "WORLD!";
+});
 
+
+app.controller("PeopleIndexCtrl", function ($scope) {
 	$scope.people = [
 	{name: 'Tony', age: 23},
 	{name: 'Marco', age: 31},
@@ -25,5 +28,6 @@ app.controller("MainCtrl", function ($scope) {
 	$scope.addPerson = function() {
 		$scope.people.push($scope.newPerson);
 		$scope.newPerson = {};
-	}
+	};
+	
 })
