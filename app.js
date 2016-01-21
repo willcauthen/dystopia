@@ -33,8 +33,17 @@ app.controller("UserIndexCtrl", function ($scope, User) {
 	};
 
 });
-app.controller("UserShowCtrl", function ($stateParams, $scope, User) {
+app.controller("UserShowCtrl", function ($stateParams, $scope, User, $http) {
 	$scope.user = User.get($stateParams.user_id);
+	var query = 'http://api.giphy.com/v1/gifs/search?q=' + $scope.user.name + '&api_key=dc6zaTOxFJmzC';
+	$http.get(query).then(
+		function (data) {
+			console.log(data);
+			$scope.gifs = data.data.data
+		}, function (error) {
+			console.log(error);
+		}
+	)
 });
 
 app.factory("User", function () {
