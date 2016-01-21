@@ -1,6 +1,6 @@
 console.log("We're in good shape");
 
-var app = angular.module('dystopia', []);
+var app = angular.module('dystopia', ['ui.router']);
 
 app.controller('MainCtrl', function ($scope) {
 	$scope.name = "World";
