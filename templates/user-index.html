@@ -1,0 +1,16 @@
+<h2>Adults</h2>
+	<ul ng-repeat="user in users" ng-hide="user.age < 18">
+		<li><a ui-sref="user-show({user_id: user.id})">{{user.name}}</a> is {{user.age}} years old.</li>
+	</ul>
+<h2>Minors</h2>
+	<ul ng-repeat="user in users" ng-hide="user.age > 18">
+		<li><a ui-sref="user-show({user_id: user.id})">{{user.name}}</a> is {{user.age}} years old.</li>
+	</ul>-
+
+	<form ng-submit="addUser()">
+		<label for="">NAME</label>
+		<input type="text" class="form-control" ng-model="newUser.name">
+		<label for="">AGE</label>
+		<input type="text" class="form-control" ng-model="newUser.age">
+		<button type="submit">Submit</button>
+	</form>
